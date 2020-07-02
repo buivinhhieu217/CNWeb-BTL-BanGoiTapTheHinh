@@ -1,75 +1,105 @@
-﻿@model IEnumerable<CNWeb_BTL_BanGoiTapTheHinh.Models.Product>
+﻿@using CNWeb_BTL_BanGoiTapTheHinh.Models
+@model IPagedList<CNWeb_BTL_BanGoiTapTheHinh.Models.Product>
+
+@using X.PagedList
+@using X.PagedList.Mvc
+@using X.PagedList.Mvc.Common
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<section class=" register-now">
+    <div class="row">
+        <div class="col-8 d-none d-lg-block">
+            <div class="text-white register-now-title">ĐĂNG KÝ NGAY</div>
+            <div class="text-white register-now-detail">
+                Trải nghiệm 3 ngày miễn phí toàn bộ dịch vụ
+            </div>
+        </div>
+        <div class="col-lg-4 text-sm-center btn-register-now">
+            <button class="btn btn-danger " type="button" data-toggle="modal"
+                    data-target="#register-modal">
+                <div>ĐĂNG KÝ NGAY</div>
+            </button>
+        </div>
+    </div>
+</section>
+<section class="bg-light">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-9 col-sm-12">
+                <div class="package-title">
+                    <h3 class="text-center pt-5 pb-3 font-weight-bold text-danger">GÓI TẬP</h3>
+                </div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ImageUrl)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedAt)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UpdatedAt)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DeletedAt)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Status)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CategoryId)
-        </th>
-        <th></th>
-    </tr>
+                <!-- sorting products -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Sắp xếp theo
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdown1">
+                        <a class="dropdown-item" href="@Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.NameSortParm })"> Sắp xếp theo tên [A] -> [Z]</a>
+                        <a class="dropdown-item" href="#">Sắp xếp theo tên [Z] -> [A]</a>
+                        <a class="dropdown-item" href="@Html.ActionLink("Price", "Index", new { sortOrder = ViewBag.PriceSortParm })"> Sắp xếp theo giá Thấp -> Cao</a>
+                        <a class="dropdown-item" href="#">Sắp xếp theo giá Cao -> Thấp</a>
+                    </div>
+                </div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ImageUrl)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedAt)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UpdatedAt)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DeletedAt)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Status)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CategoryId)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+                <!-- list products-->
+                <div class="list-package pt-4">
+                    <div class="row">
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-md-4">
+                                <div class="package-item">
+                                    <div class="package-img">
+                                        <img src="@item.ImageUrl" alt="">
+                                    </div>
+                                    <div class="font-weight-bold package-price pt-3 text-center">
+                                        <p>@item.Price ₫</p>
+                                    </div>
+                                    <div class="text-center package-name">@item.Name</div>
+                                    <div class="text-center pt-3">
+                                        @*<a href="/Cart/AddItem/@item.Id.ToString().Trim()?returnURL=@Request.RawUrl">*@
+                                        <a href="#">
+                                            <button class="btn btn-add">
+                                                <i class="fas fa-shopping-cart"></i>
+                                                Thêm vào giỏ hàng
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            @{Html.RenderAction("MenuCategory", "Products"); }
+        </div>
+    </div>
 
-</table>
+    <!-- pagination -->
+    @*<br />
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter, categoryId = ViewBag.CategoryId }))*@
+
+</section>
+
+<section class=" register-now">
+    <div class="row">
+        <div class="col-8 d-none d-lg-block">
+            <div class="text-white register-now-title">ĐĂNG KÝ NGAY</div>
+            <div class="text-white register-now-detail">
+                Trải nghiệm 3 ngày miễn phí toàn bộ dịch vụ
+            </div>
+        </div>
+        <div class="col-lg-4 text-sm-center btn-register-now">
+            <button class="btn btn-danger " type="button" data-toggle="modal"
+                    data-target="#register-modal">
+                <div>ĐĂNG KÝ NGAY</div>
+            </button>
+        </div>
+    </div>
+</section>

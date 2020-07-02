@@ -1,0 +1,35 @@
+﻿@using CNWeb_BTL_BanGoiTapTheHinh
+@model IEnumerable<CNWeb_BTL_BanGoiTapTheHinh.Models.Category>
+
+@{
+    ViewBag.Title = "View";
+}
+<div class="col-3 d-none d-lg-block">
+    <div class="pl-4">
+        <div class="list-category">
+            <h3 class="font-weight-bold text-danger pb-3 pt-5">DANH MỤC</h3>
+            <div class="category-item-list pt-4 font-weight-bolder">
+
+                <div>
+                    @using (Html.BeginForm("Index", "Products",
+FormMethod.Get))
+                    {
+                        <p>
+                            @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { placeholder = "Tìm kiếm.....", @class = "form-control" })
+                            <input type="submit" value="Search" id="btn-submit" style="display: none;" />
+                        </p>
+                    }
+
+                </div>
+                @foreach (CNWeb_BTL_BanGoiTapTheHinh.Models.Category item in Model)
+                {
+                    <div class="category-item"><a href="/Products?categoryId=@item.Id">@item.Name</a></div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(#btn-submit).show();
+</script>

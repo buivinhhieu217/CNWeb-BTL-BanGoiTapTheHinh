@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using CNWeb_BTL_BanGoiTapTheHinh.Models;
+using X.PagedList;
+using X.PagedList.Mvc;
 
 namespace CNWeb_BTL_BanGoiTapTheHinh.Controllers
 {
@@ -15,9 +17,67 @@ namespace CNWeb_BTL_BanGoiTapTheHinh.Controllers
         private CNWeb_BTL_BanGoiTapTheHinhEntities db = new CNWeb_BTL_BanGoiTapTheHinhEntities();
 
         // GET: Products
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? categoryId, int? page)
         {
-            return View(db.Products.ToList());
+
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.PriceSortParm = sortOrder == "Price" ? "price_desc" : "Price";
+
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+            ViewBag.CurrentFilter = searchString;
+
+            var products = db.Products.AsQueryable();
+
+            // tim kiem
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                products = products.Where(p => p.Name.ToLower().Contains(searchString));
+            }
+
+            // loc san pham theo danh muc
+            ViewBag.categoryId = categoryId;
+            if (categoryId != null)
+            {
+                products = products.Where(p => p.CategoryId == categoryId);
+            }
+
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    products = products.OrderByDescending(p => p.Name);
+                    break;
+                case "Price": // Price ascending
+                    products = products.OrderBy(p => p.Price);
+                    break;
+                case "price_desc":
+                    products = products.OrderByDescending(p => p.Price);
+                    break;
+                default:  // Name ascending 
+                    products = products.OrderBy(p => p.Name);
+                    break;
+            }
+
+            int pageSize = 6;
+            int pageNumber = (page ?? 1);
+
+            return View(products.ToList().ToPagedList(pageNumber, pageSize));
+        }
+
+
+        [ChildActionOnly]
+        public ActionResult MenuCategory()
+        {
+            //var model = new DanhMucF().DSDanhMuc.ToList();
+            return PartialView(db.Categories.ToList());
         }
 
         // GET: Products/Details/5

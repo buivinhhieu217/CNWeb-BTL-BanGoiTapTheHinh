@@ -1,0 +1,598 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+.navbar {
+    /*font-size: 18px;*/
+    font-family: 'Roboto', sans-serif;
+    border-bottom: rgba(115, 115, 115, 0.9);
+    font-weight: bold;
+}
+
+.logo {
+    width: 12%;
+}
+
+    .logo img {
+        width: 100%;
+    }
+
+.dropdown-menu {
+    background-color: #f8f9fa;
+}
+
+.dropdown-item:active {
+    background-color: #dc3545;
+}
+
+.dropdown-item:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+.nav-link {
+    color: #2f3438;
+}
+
+    .nav-link:hover {
+        color: #dc3545;
+    }
+
+.register-now-title {
+    font-size: 30px;
+    font-weight: bold;
+    padding-left: 110px;
+    font-family: 'Roboto Slab', serif;
+    color: darkgrey;
+}
+
+.register-now-detail {
+    font-size: 20px;
+    padding-left: 110px;
+    font-family: 'Roboto Slab', serif;
+    color: darkgrey;
+}
+
+.btn-register-now {
+    padding-top: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+    .btn-register-now button {
+        width: 230px;
+        height: 50px;
+    }
+
+.page-content {
+    background-color: #22262f;
+}
+
+    .page-content h4 {
+        font-size: 300%;
+    }
+
+.register-now {
+    padding-top: 36px;
+    padding-bottom: 46px;
+    background-color: #22262f;
+}
+
+.introduce-1 {
+    padding: 100px 80px;
+}
+
+.introduce-1-img img {
+    width: 100%;
+}
+
+.introduce-1-detail-1 {
+    font-family: 'Roboto Slab', sans-serif;
+    font-weight: bold;
+}
+
+.introduce-1-detail-2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.introduce-2 {
+    background-color: #eee;
+    padding: 100px 80px 60px;
+}
+
+.pt-introduce-1 {
+    padding-right: 90px;
+    padding-top: 70px;
+}
+
+.pt-introduce-2 {
+    background-color: #eee;
+    padding-top: 70px;
+    padding-left: 50px;
+}
+
+.introduce-2-img img {
+    width: 90%;
+    padding-bottom: 30px;
+}
+
+.introduce-2-detail-1 {
+    font-family: 'Roboto Slab', sans-serif;
+    font-weight: bold;
+}
+
+.introduce-2-detail-2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+}
+
+.box-brand-bug {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.introduce-img img {
+    width: 100%;
+}
+
+
+.pt-1-img img {
+}
+
+.pt-2-img img {
+    margin-left: 150px;
+    padding-top: 10px;
+}
+
+footer {
+    background: url("https://stmed.net/sites/default/files/dark-grey-wallpapers-25192-2374233.jpg");
+    padding-bottom: 30px;
+}
+
+    footer:after {
+        content: '';
+        clear: both;
+        display: block;
+    }
+
+.box-bug {
+    padding-top: 40px;
+}
+
+    .box-bug h3 {
+        color: white;
+        padding-left: 20px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .box-bug ul {
+        list-style-type: square;
+        color: red;
+    }
+
+    .box-bug a {
+        text-decoration: none;
+        color: darkgrey;
+        font-family: 'Roboto ', sans-serif;
+        transition: .4s;
+    }
+
+        .box-bug a:hover {
+            color: whitesmoke;
+        }
+
+.box-service {
+    padding-top: 40px;
+}
+
+    .box-service h3 {
+        color: white;
+        padding-left: 20px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .box-service ul {
+        list-style-type: square;
+        color: red;
+    }
+
+    .box-service a {
+        text-decoration: none;
+        color: darkgrey;
+        font-family: 'Roboto ', sans-serif;
+        transition: .4s;
+    }
+
+        .box-service a:hover {
+            color: whitesmoke;
+        }
+
+.box-Contact h3 {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.box-Contact {
+    padding-top: 40px;
+}
+
+    .box-Contact a {
+        text-decoration: none;
+        color: darkgrey;
+        font-family: 'Roboto', sans-serif;
+        margin: 5px;
+        transition: .4s;
+    }
+
+        .box-Contact a:hover {
+            color: whitesmoke;
+        }
+
+.number {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+    .number a {
+        font-size: 30px;
+        color: red;
+        font-weight: bold;
+        border-bottom: darkgrey 1px solid;
+        border-top: darkgrey 1px solid;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+.box-brand img {
+    width: 100%;
+    margin-top: -10px;
+    padding-right: 10px;
+}
+
+.banner {
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    margin-top: -30px;
+    font-family: 'Satisfy', cursive;
+}
+
+.fa-facebook-square:hover {
+    color: red;
+}
+
+.fa-twitter-square:hover {
+    color: red;
+}
+
+.fa-instagram:hover {
+    color: red;
+}
+
+.modal-content {
+    background: url("https://stmed.net/sites/default/files/dark-grey-wallpapers-25192-2374233.jpg");
+}
+
+.register-logo img {
+    padding-top: -20px;
+}
+
+#btn-submit {
+    margin-left: 120px;
+}
+
+.member-slogan {
+    font-size: 30px;
+    font-family: 'Roboto Slab', sans-serif;
+}
+
+.member-index {
+    font-size: 50px;
+    color: #dc3545;
+}
+
+.member-img {
+    margin-left: 150px;
+}
+
+.member-btn {
+    padding-bottom: 35px;
+}
+
+.member-benefit {
+    font-size: 20px;
+}
+
+.gallery-quote {
+    font-family: 'Roboto Slab', sans-serif;
+}
+
+.gallery-item img {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.gallery-item {
+    padding-bottom: 20px;
+    border-radius: 20px;
+    margin: 30px;
+    background-color: white;
+}
+
+
+.new-img {
+    width: 100%;
+    height: 80%;
+}
+
+    .new-img img {
+        width: 100%;
+        height: 100%;
+    }
+
+.new-item {
+    margin-bottom: 20px;
+}
+
+.list-new {
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+
+.new-item a {
+    text-decoration: none;
+}
+
+.active-page {
+    color: #dc3545;
+}
+
+.active-bg {
+    background-color: #dc3545;
+    color: white;
+}
+
+.package-img {
+    width: 100%;
+    height: 200px;
+}
+
+    .package-img img {
+        width: 100%;
+        height: 100%;
+    }
+
+.package-item {
+    background: white;
+    padding: 5%;
+    margin-bottom: 7%;
+}
+
+.list-package {
+    margin-left: 6%;
+    border-top: 2px #dc3545 solid;
+}
+
+
+.package-item a {
+    text-decoration: none;
+}
+
+.package-item button:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+.package-price {
+    color: #dc3545;
+    font-size: 200%;
+    margin: 1%;
+}
+
+.package-name {
+    font-size: 130%;
+}
+
+.category {
+}
+
+.list-category {
+    padding-left: 14%;
+    margin-right: 15%;
+}
+
+    .list-category a {
+        text-decoration: none;
+        color: black;
+    }
+
+        .list-category a:hover {
+            color: #dc3545;
+        }
+
+.category-item-list {
+    border-top: 2px #dc3545 solid;
+}
+
+.category-item {
+    border-bottom: 1px #dc3545 dashed;
+    padding-bottom: 6%;
+    font-weight: bolder;
+}
+
+    .category-item a {
+        color: #333;
+    }
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+.cart-table {
+    font-size: 130%;
+}
+
+.cart-add {
+    padding-right: 10px;
+    font-size: 130%;
+    color: black;
+}
+
+    .cart-add:hover {
+        color: #dc3545;
+    }
+
+.cart-minus {
+    padding-left: 10px;
+    font-size: 130%;
+    color: black;
+}
+
+    .cart-minus:hover {
+        color: #dc3545;
+    }
+
+.del-cart {
+    color: black;
+}
+
+    .del-cart:hover {
+        color: #dc3545;
+    }
+
+.list-added {
+    border: 1px solid #ffc107;
+    padding: 1px;
+    background: #ffc107;
+    border-radius: 50px;
+}
+
+.show-menu-btn {
+    display: none;
+    font-size: 60px;
+    padding-bottom: 20px;
+}
+
+.side-nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    opacity: 0.9;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+    float: right;
+}
+
+
+    .side-nav a {
+        padding: 10px 10px 10px 30px;
+        text-decoration: none;
+        font-size: 22px;
+        color: #ccc;
+        display: block;
+        transition: 0.3s;
+    }
+
+        .side-nav a:hover {
+            color: #fff;
+        }
+
+    .side-nav .btn-close {
+        position: absolute;
+        top: 0;
+        right: 22px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+@media(max-width:768px) {
+    .show-menu-btn {
+        display: block;
+        transform: translateX(50%);
+        color: #091D13;
+    }
+
+    .logo {
+        width: 250px;
+        transform: translateX(-20%);
+    }
+}
+
+@media (min-width: 1280px) {
+    .margin-lg {
+        margin: 10px;
+    }
+
+    .col-md-6-5 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 48.5%;
+    }
+
+    .padding-lg-1 {
+        padding: 10px;
+        padding-right: 200px;
+        padding-top: 100px;
+    }
+
+    .padding-lg-2 {
+        padding: 10px;
+        padding-left: 200px;
+    }
+
+    .video-lg {
+        width: 600px;
+        height: 315px;
+    }
+
+    .list-gallery {
+        padding-left: 150px;
+        padding-bottom: 40px;
+    }
+}
+
+@media (min-width: 320px) {
+    .padding-sm-1 {
+        padding-top: 20px;
+        padding-left: 75px;
+        padding-right: 75px;
+    }
+
+    .padding-sm-2 {
+        padding-top: 50px;
+        padding-left: 75px;
+        padding-right: 75px;
+    }
+
+    .padding-sm-3 {
+        padding: 30px;
+    }
+}
+
+.pay {
+    border: white solid 3px;
+    padding: 10px;
+    background: #6c757d;
+}
+
+.cart-action {
+    border: white solid 3px;
+    padding: 10px;
+    margin-bottom: 1px;
+}
+
+    .cart-action a {
+        text-decoration: none;
+        color: #f8f9fa
+    }
+
+#side-menu .dropdown-menu {
+    background: black;
+}

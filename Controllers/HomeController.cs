@@ -17,5 +17,27 @@ namespace CNWeb_BTL_BanGoiTapTheHinh.Controllers
         {
             return View();
         }
+
+        public ActionResult Fitness()
+        {
+            return View();
+        }
+        public ActionResult GroupEx()
+        {
+            return View();
+        }
+        public ActionResult Kickfit()
+        {
+            return View();
+        }
+        public ActionResult Swim()
+        {
+            return View();
+        }
+        public ActionResult Yoga()
+        {
+            return View();
+        }
+
     }
 }
